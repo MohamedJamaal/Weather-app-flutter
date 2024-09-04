@@ -18,13 +18,14 @@ class WeatherModel {
 
   factory WeatherModel.fromJson(json) {
     return WeatherModel(
-        cityName: json['forecast']['name'],
-        image: json['forecast']['forecastday'][0]['day']['condition']['icon'],
-        date: json['condition']['last_updated'],
-        temp: json['forecast']['forecastday'][0]['day']['avgtemp_c'],
-        maxTemp: json['forecast']['forecastday'][0]['day']['maxtemp_c'],
-        minTemp: json['forecast']['forecastday'][0]['day']['mintemp_c'],
-        waetherCondition: json['forecast']['forecastday'][0]['day']['condition']
-            ['text']);
+      cityName: json['location']['name'],
+      image: json['forecast']['forecastday'][0]['day']['condition']['icon'],
+      date: json['current']['last_updated'],
+      temp: json['forecast']['forecastday'][0]['day']['avgtemp_c'],
+      maxTemp: json['forecast']['forecastday'][0]['day']['maxtemp_c'],
+      minTemp: json['forecast']['forecastday'][0]['day']['mintemp_c'],
+      waetherCondition: json['forecast']['forecastday'][0]['day']['condition']
+          ['text'],
+    );
   }
 }
