@@ -14,7 +14,6 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Weather App'),
-        backgroundColor: Colors.blueAccent,
         actions: [
           IconButton(
             onPressed: () {
@@ -35,7 +34,9 @@ class HomeView extends StatelessWidget {
           if (state is WeatherInitialState) {
             return const NoWeatherBody();
           } else if (state is WeatherLoadedState) {
-            return const WeatherInfoBody();
+            return WeatherInfoBody(
+              weather: state.weatherModel,
+            );
           } else {
             return const Text('oops there was a problem !! ');
           }
