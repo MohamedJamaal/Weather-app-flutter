@@ -50,7 +50,7 @@ class WeatherInfoBody extends StatelessWidget {
                   "https:${weatherModel.image}",
                 ),
                 Text(
-                  weatherModel.temp.toString(),
+                  '${weatherModel.temp.round()}',
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 32,
